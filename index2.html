@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-bt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formuláriozin</title>
+</head>
+
+<body>
+
+    <!--
+        LABEL -> serve para relacionar com o input para dizer a qual ele está ligado, todo formulário deve estar entre <form>
+        METHOD -> GET é até 3000bites ou 3000 caracteres, get aparece os dados na url
+        POST não aparece os dados na url, pode enviar mais que 3000bites
+        REQUIRED -> Serve para ser obrigaótirio o preenchimento do campo
+        MIN E MAXLENGHT -> Sempre para determinar quantidade mínima e máxima de caracteres no campo
+        SIZE -> Serve para definir o tamanho do campo, se definir como 10, significa que irá mostrar 10 letras
+        PLACEHOLDER -> Serve para deixar uma msgzinha apagada no campo, para indicar o usuário oque tem que colocar
+        AUTOCOMPLET -> Se for na tag do forms, serve para dizer se aparecerá a opção de autocompletar ou não.
+        Se for fora, no input serve para autocompletar, porém você pode escolher qual dado aquilo é, se é nome, senha, sexo etc.
+    -->
+    <h1>Teste de formulário</h1>
+    <form action="cadastro.php" method="post" autocomplete="on">
+        <p>
+            <label for="iusu">Usuário:</label>
+            <input type="text" name="usuario" id="iusu" required size="15" placeholder="Nome do usuário" autocomplete="username">
+        </p>
+        <p>
+            <label for="isenha">Senha:</label>
+            <input type="password" name="senha" id="isenha" required minlength="4" maxlength="8" placeholder="Máximo 8 caracteres" autocomplete="current-password" >
+        </p>
+        <p>
+            <input type="submit" value="Envia Porra!">
+            <input type="reset" value="Limpar essa caralha">
+        </p>
+    </form>
+
+</body>
+
+</html>

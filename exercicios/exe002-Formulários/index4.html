@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários</title>
+</head>
+
+<body>
+
+    <!--
+        LABEL -> serve para relacionar com o input para dizer a qual ele está ligado, todo formulário deve estar entre <form>
+        METHOD -> GET é até 3000bites ou 3000 caracteres, get aparece os dados na url
+        POST não aparece os dados na url, pode enviar mais que 3000bites
+        REQUIRED -> Serve para ser obrigaótirio o preenchimento do campo
+        MIN E MAXLENGHT -> Sempre para determinar quantidade mínima e máxima de caracteres no campo
+        SIZE -> Serve para definir o tamanho do campo, se definir como 10, significa que irá mostrar 10 letras
+        PLACEHOLDER -> Serve para deixar uma msgzinha apagada no campo, para indicar o usuário oque tem que colocar
+        AUTOCOMPLET -> Se for na tag do forms, serve para dizer se aparecerá a opção de autocompletar ou não.
+        Se for fora, no input serve para autocompletar, porém você pode escolher qual dado aquilo é, se é nome, senha, sexo etc.
+        NUMBER -> Serve para o autocomplet ser número, usando min e max indicará o o range que pode chegar, step serve para dar um passe de números, tipo: se for de 0.5, subirá de  0,5 em 0,5
+        FIELDSET -> Serve para criar uma caixar para agurar os dados
+        LEGEND -> cria uma legenda para o field set na tela
+        Estudar sobre RegEx
+        CHECKED -> Checked dentro do input serve para já aparecer marcado
+        RADIO -> Input do tipo RADIO serve para dar opções que só pode ser marcada uma. Para funcionar bem o name deve ter o mesmo nome em todas as label.
+        CHECKBOX -> Input do tipo CHECKBOX serve para criar caixas de marcação, pode ser várias caixinhas diferentes e marcar quantas quiser
+        COLOR -> Input do tipo COLOR, cria uma caixa para o usuário escolher a cor.
+        RANGE -> Input do tipo RANGE cria uma range para o usuário escolher, com atributo min e max define o min e máx da range.
+        FILE -> Inputo do tipo FILE serve para subir um arquivo do pc do usuário.
+        -->
+    <h1>Formulários de dados pessoais</h1>
+    <form action="cadastro.php" method="post" autocomplete="on">
+        <fieldset>
+            <legend><strong>Dados pessoais</strong></legend>
+            <p>
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" placeholder="Digite seu nome" required autocomplete="name">
+            </p>
+            <p>
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Digite seu email" required autocomplete="email">
+            </p>
+            <p>
+                <label for="tel">Telefone:</label>
+                <input type="tel" id="tel" placeholder="x xxxx-xxxx" autocomplete="tel">
+            </p>
+            <p>
+                <input type="submit" value="Enviar">
+                <input type="reset" value="Limpar">
+            </p>
+        </fieldset>
+    </form>
+    <h1>Checkbox e Radio!!</h1>
+    <fieldset>
+        <legend><strong>Radio</strong></legend>
+        <form action="cadastro.php" method="get">
+            <input type="radio" name="sexo" id="masc" value="M" checked>
+            <label for="masc">Masculino</label><br>
+            <input type="radio" name="sexo" id="fem" value="F" checked>
+            <label for="fem">Feminino</label>
+    </fieldset>
+    <fieldset>
+        <legend><strong>Checkbox</strong></legend>
+        <input type="checkbox" name="fut" id="iFut">
+        <label for="iFut">Futebol</label><br>
+        <input type="checkbox" name="ten" id="iTen">
+        <label for="iTen">Tênis</label><br>
+        <input type="checkbox" name="bas" id="iBas">
+        <label for="iBas">Basquete</label><br>
+        <input type="checkbox" name="pingpong" id="iPingpong">
+        <label for="iPingpong">Ping Pong</label>
+
+        <p>
+            <input type="submit" value="Mande">
+            <input type="reset" value="Limpezinha">
+    </fieldset>
+    </p>
+    </form>
+
+    <h1>Cor, Range e File </h1>
+    <form action="cadastro.php" method="post">
+        <fieldset>
+            <legend>Cor</legend>
+            <label for="iCor">Selecione sua cor:</label>
+            <input type="color" name="cor" id="iCor" value="#F059E8"><br><br>
+            <label for="iRange">Selecione um nível:</label>
+            <input type="range" name="range" id="iRange" min="1" max="5">
+            <p>
+                <label for="iFoto">Escolha uma foto:</label>
+                <input type="file" name="foto" id="Ifoto"><br><br><br>
+                <input type="submit" value="Mande">
+                <input type="reset" value="Limpezinha">
+        </p>
+        </fieldset>
+    </form>
+    <h1>Option, Datalist e Textarea </h1>
+    <form action="cadstro.php" method="post">
+        <fieldset>
+            <legend><strong>Option</strong></legend>
+            <label for="estado">Selecione seu estado:</label>
+            <select name="estado" id="iEstado">
+                <optgroup label="Região Sudeste">
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="MG">Minas gerais</option>
+                    <option value="ES">Espírito Santo</option>
+                </optgroup>
+                <optgroup label="Região Nordeste">
+                    <option value="AL">Alagoas</option>
+                    <option value="BH">Bahia</option>
+                    <option value="CE">Ceará</option>
+                    <option value="MA">Maranhão</option>
+                    <option value="PB">Paraíba</option>
+                    <option value="PE">Pernanbuco</option>
+                    <option value="PI">Piauí</option>
+                    <option value="RN">Rio Grande do Norte</option>
+                    <option value="SE">Sergipe</option>
+                </optgroup>
+              </select>
+        </fieldset>
+        <fieldset>
+            <legend><strong>Datalist</strong></legend>
+            <label for="prof">Profissão:</label>
+            <input type="text" name="prof" id="iProf" list="listProf">
+            <datalist id="listProf">
+                <option value="Dev"></option>
+                <option value="AM">Analista de Marketing</option>
+                <option value="Prof">Professor</option>
+                <option value="Ped">Pedreiro</option>
+            </datalist>
+        </fieldset><br>
+        <label for="Itexto">Escreva seu texto aqui em baixo:</label><br>
+        <textarea name="texto" id="iTexto" cols="30" rows="10"> </textarea>
+    </form>
+
+
+
+
+
+
+
+
+
+
+
+
+    <br><br><br><br><br><br><br><br><br>
+    
+    <br><br><br><br><br><br><br><br><br>
+
+</body>
+
+</html>

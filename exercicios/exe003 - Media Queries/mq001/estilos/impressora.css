@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+/*Estilos para impressoras*/
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+html{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1em;
+    line-height: 1em;
+}
+menu{
+    display: none;
+}
+article::after{
+    content: 'Esse artigo foi impresso através do meu exercício.com';
+}
+
+article{
+    width: 100%;
+}
