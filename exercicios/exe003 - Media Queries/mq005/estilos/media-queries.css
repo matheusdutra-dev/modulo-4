@@ -1,16 +1,39 @@
 @charset "UTF-8";
 
 @media screen and (min-width: 768px) {
-    #burguer{
+    #burguer {
         display: none;
     }
 
-    menu{
+    menu {
         display: block;
     }
 
-    menu > ul > li{
-        display: inline-block;
+    menu>ul {
+        display: flex;
+        background-color: #ce1626;
     }
-    
+
+    menu>ul>li {}
+
+    menu>ul>li>a {
+        width: 18vw;
+        margin: 0px;
+        border-radius: 0px;
+        font-weight: bolder;
+    }
+
+    menu > ul > li > a:hover{
+        color: #ce1626;
+        background-color: #EFDF2E;
+    }
+
+    .logo{
+         height: 250px;
+    }
+
+    #logo{
+        width: 350px;
+    }
+
 }
