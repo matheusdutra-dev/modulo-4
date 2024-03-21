@@ -35,4 +35,16 @@
         width: 350px;
     }
 
+    main{
+        width: 1000px;
+    }
+
+}
+
+
+
+@media screen and (orientation: landscape){
+#burguer{
+    display:block;
+}
 }
